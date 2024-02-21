@@ -39,8 +39,6 @@ const displayPhones = (phones, isShowAll) => {
 }
 
  const handleShowDetail = async(id) => {
-  // console.log('clicked', id);
-  // load single phone data
   const res =await fetch(`https://openapi.programming-hero.com/api/phone/${id}`);
   const data = await res.json();
   const phone = data.data;
@@ -49,14 +47,13 @@ const displayPhones = (phones, isShowAll) => {
  
 
  const showPhoneDetails = (phone) => {
-  // console.log(phone);
   const phoneName = document.getElementById('phone-name');
   phoneName.innerText = phone.name;
 
   const showDetailContainer = document.getElementById('show-detail-container');
   showDetailContainer.innerHTML = `
   <img src="${phone.image}" alt="">
-  
+ 
 
   `
   
@@ -83,7 +80,7 @@ const displayPhones = (phones, isShowAll) => {
   }
  }
 //  handle show all
-const handleShowAll = () => {
+ const handleShowAll = () => {
  handleSearch(true);
 }
 
